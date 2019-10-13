@@ -18,6 +18,7 @@ public class Main {
                 param("key","AIzaSyBF0YL-HA1WEDLyrYwhcLYkTHoGfmEMT5Y").
                 when().get("maps/api/place/nearbysearch/json").
                 then().assertThat().statusCode(200).and().contentType(ContentType.JSON).and().
+                body("results[0].geometry.location.lat",equalTo("-33.858543")).and().
                 body("results[0].place_id.",equalTo("ChIJi6C1MxquEmsR9-c-3O48ykI")).and().
                 header("Server","scaffolding on HTTPServer2");
     }
