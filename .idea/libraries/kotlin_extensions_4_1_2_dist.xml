@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="kotlin-extensions-4.1.2-dist">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Downloads/kotlin-extensions-4.1.2-dist.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="jar://$USER_HOME$/Downloads/kotlin-extensions-4.1.2-dist.zip!/" recursive="false" />
+  </library>
+</component>
