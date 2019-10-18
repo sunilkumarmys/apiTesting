@@ -1,7 +1,10 @@
 package com.apiTesting;
 
+import com.apiTesting.files.reusableFile;
+
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
+import io.restassured.path.xml.XmlPath;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
 
@@ -10,6 +13,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 import static io.restassured.RestAssured.given;
+import static java.util.Optional.*;
 import static org.hamcrest.Matchers.equalTo;
 
 public class Basics4 {
@@ -26,8 +30,8 @@ public class Basics4 {
                         then().assertThat().statusCode(200).and().contentType(ContentType.XML).
         extract().response();
 
-        String apiResponse = resp.toString();
-        System.out.println(apiResponse);
+        XmlPath xmlResponse = reusableFile.rawToXML(resp);
+        System.out.println(ofNullable(xmlResponse.get("PlaceAddResponse.place_id")));
 
 
     }
